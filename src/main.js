@@ -63,13 +63,17 @@ uploadArticleBtn.addEventListener("click", async function () {
   const articleTitle = document.querySelector("#title").value;
   const articleText = document.querySelector("#article").value;
   const articleAuthor = document.querySelector("#author").value;
-  const articleAmount = document.querySelector("#amount").value;
+  const articlePrice = document.querySelector("#amount").value;
 
+    if(!articleTitle && articleText.length < 450 && !articleAuthor && articlePrice > 0){
+      notification("Please fill out the required fields");
+      return;
+    }
   const article = [
     articleAuthor,
     articleTitle,
     articleText,
-    new BigNumber(articleAmount).shiftedBy(ERC20_DECIMALS).toString() // converting the passed price to an ERC20_DECIMAL number
+    new BigNumber(articlePrice).shiftedBy(ERC20_DECIMALS).toString() // converting the passed price to an ERC20_DECIMAL number
   ];
 
   try {
