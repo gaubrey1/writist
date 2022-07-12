@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+      * {
+        --btn-color: #3383b8;
+        --text-color: #2c2c2c;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        color: var(--text-color);
+        background-color: #fdfdfd;
+        font-family: "Montserrat";
+        font-size: 16px;
+        position: relative;
+      }
+      .notification {
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        padding: 0px;
+        box-sizing: border-box;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px #d1d1d1;
+        border-radius: 3px;
+        padding: 10px 30px;
+      }
+      .notification h1 {
+        margin: 0px;
+        font-size: 1.2rem;
+      }
+      button {
+        background-color: var(--btn-color);
+        color: #fff;
+        border-radius: 3px;
+        border: none;
+        padding: 13px 20px;
+        text-transform: capitalize;
+        font-size: 1rem;
+        font-family: "Montserrat";
+        cursor: pointer;
+      }
+
+      /* Navigation Styles */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding: 0px 5%;
+        box-sizing: border-box;
+      }
+      nav .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+      .logo p span {
+        display: block;
+        font-size: 0.6rem;
+      }
+
+      .navigation {
+        width: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+      .navigation ul {
+        padding: 0px;
+        margin: 0px;
+      }
+      .navigation li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 10px 0px 10px 20px;
+      }
+      .navigation li a {
+        text-decoration: none;
+        color: var(--text-color);
+        margin: 0px 0px 10px 0px;
+        padding: 7px 15px;
+        transition: all 0.3s;
+      }
+      .navigation li:hover a {
+        background-color: var(--btn-color);
+        color: #fff;
+        border-radius: 3px;
+      }
+      .navigation .user-acct-balance {
+        border-radius: 2px;
+        padding: 10px 16px;
+        color: #fff;
+        background-color: var(--btn-color);
+      }
+      .user-acct-balance p {
+        margin: 0px;
+      }
+      /* ENDS HERE */
+
+      /* HEADER SECTION */
+      header {
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 30px;
+        padding: 0px 5%;
+        margin-top: calc(100vh - 90vh);
+        box-sizing: border-box;
+      }
+
+      header .header-content {
+        width: 600px;
+      }
+      .header-content h1 {
+        text-transform: capitalize;
+        font-size: 3rem;
+        margin-top: 10px;
+        line-height: 1.3;
+      }
+      .header-content h1 span {
+        color: #fff;
+        background-color: var(--btn-color);
+      }
+      .header-content p {
+        line-height: 1.5;
+      }
+
+      .header-btn {
+        width: 400px;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+      .header-btn button {
+        min-width: 120px;
+      }
+
+      /* UPLOAD ARTICLE STYLES */
+      .user-article {
+        justify-content: center;
+        width: 400px;
+        margin: 0px auto;
+        padding: 10px;
+      }
+      .user-article h1 {
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .user-article div {
+        width: 90%;
+        margin: 10px auto;
+      }
+      .user-article input,
+      .user-article textarea {
+        margin-top: 7px;
+        width: 100%;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        padding-left: 5px;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        font-family: "Montserrat";
+        height: 40px;
+        box-sizing: border-box;
+        border: thin solid #e8e8e8;
+      }
+      .user-article textarea {
+        height: 120px;
+      }
+      .article-btn {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .article-btn button {
+        width: 100%;
+        border-radius: 0px;
+      }
+      /* ENDS HERE */
+
+      /* ARTICLES STYLES */
+      .articles-container {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 10px 5% 30px 5%;
+      }
+      .articles-container h1 {
+        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .articles {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px 100px;
+        align-items: flex-start;
+      }
+      .article {
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px #eeeeee;
+        width: 450px;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .article-img {
+        width: 30%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0px;
+      }
+      .article-img img {
+        height: 100%;
+      }
+
+      .article-details {
+        width: 68%;
+        height: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .article-details h3 {
+        font-size: 1.2rem;
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0px;
+        text-transform: capitalize;
+        position: relative;
+      }
+      .author-wallet {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        box-shadow: 0px 0px 5px #e2e1e1;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+      }
+      .author-wallet img {
+        width: 100%;
+      }
+      .article-details p {
+        margin: 10px 0px;
+      }
+      .article-details .price {
+        color: var(--btn-color);
+        font-size: 1.4rem;
+      }
+
+      .article-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .article-footer p {
+        color: var(--btn-color);
+      }
+      .buy-btns button {
+        margin: 0px 0px 0px 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+      }
+      .buy-btns button.delete-btn {
+        background-color: #3383b81f;
+        color: var(--btn-color);
+      }
+      /* ENDS HERE */
+
+      /* TOGGLE APPEARANCE */
+      .hide {
+        display: none;
+      }
+      .show-flex {
+        display: flex;
+      }
+      .show {
+        display: block;
+      }
+    </style>
+    <title>Writist</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <p>A & G<span>Aubrey & Graham</span></p>
+          </a>
+        </div>
+
+        <div class="navigation">
+          <ul class="show">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+          <div class="user-acct-balance hide">
+            <p>0 cUSD</p>
+          </div>
+        </div>
+      </nav>
+
+      <header class="show-flex">
+        <section class="header-content">
+          <div>
+            <h1>
+              Buy articles and upload your articles for sale to
+              <span>verified editors</span>
+            </h1>
+            <p>
+              We offer a platform for buying and selling well written articles
+              to interested verified editors at a click of a button with no
+              stress attached.
+            </p>
+          </div>
+        </section>
+
+        <section class="header-btn">
+          <button class="header-connect-wallet show">Connect wallet</button>
+          <button class="header-upload-article-btn hide">Upload article</button>
+          <button class="header-review-article-btn hide">Buy article</button>
+        </section>
+      </header>
+
+      <!-- UPLOAD ARTICLE FORM -->
+      <div class="user-article hide">
+        <h1>Upload article</h1>
+
+        <div class="title">
+          <label for="title">Title:</label>
+          <input id="title" type="text" placeholder="Article title" required />
+        </div>
+
+        <div class="article-container">
+          <label for="article">Article(not less than 450 words)</label>
+          <textarea id="article" placeholder="Article goes here..."></textarea>
+        </div>
+
+        <div class="author">
+          <label for="author">Author:</label>
+          <input id="author" type="text" placeholder="Full Name" required />
+        </div>
+
+        <div class="article-fee">
+          <label for="amount">Amount to be payed:</label>
+          <input id="amount" type="number" placeholder="Amount" required />
+        </div>
+
+        <div class="article-btn">
+          <button>Upload <span class="loader"></span></button>
+        </div>
+      </div>
+      <!-- ENDS HERE -->
+
+      <!-- DISPLAY ARTICLES FOR REVIEW -->
+      <div class="articles-container hide">
+        <h1>available articles</h1>
+
+        <div class="articles">
+          <div class="article">
+            <div class="article-img">
+              <img
+                src="https://th.bing.com/th/id/R.b1c7f4a53f692a9262901fe4fab79958?rik=WiPNDSZAvEerBw&riu=http%3a%2f%2fcoachestrainingblog.com%2fbecomeacoach%2fwp-content%2fuploads%2f2015%2f09%2farticle-coaching.jpeg&ehk=WqH4cGgU7rztnypYj9kwKsZ9yTPk8yqc%2bHYlEIBBv7E%3d&risl=&pid=ImgRaw&r=0"
+                alt="Image"
+              />
+            </div>
+
+            <div class="article-details">
+              <div class="article-author">
+                <h3>
+                  John Doe
+                  <span class="author-wallet"></span>
+                </h3>
+                <p>John Doe's Title</p>
+                <p class="price">0 cUSD</p>
+              </div>
+
+              <div class="article-footer">
+                <p class="purchased">Sold: 0</p>
+                <div class="buy-btns">
+                  <button class="delete-btn">Delete</button>
+                  <button id="0">Buy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="article-img">
+              <img
+                src="https://th.bing.com/th/id/R.b1c7f4a53f692a9262901fe4fab79958?rik=WiPNDSZAvEerBw&riu=http%3a%2f%2fcoachestrainingblog.com%2fbecomeacoach%2fwp-content%2fuploads%2f2015%2f09%2farticle-coaching.jpeg&ehk=WqH4cGgU7rztnypYj9kwKsZ9yTPk8yqc%2bHYlEIBBv7E%3d&risl=&pid=ImgRaw&r=0"
+                alt="Image"
+              />
+            </div>
+
+            <div class="article-details">
+              <div class="article-author">
+                <h3>
+                  John Doe
+                  <span class="price">0 cUSD</span>
+                </h3>
+                <p>John Doe's Title</p>
+              </div>
+
+              <div class="article-footer">
+                <p class="purchased">Sold: 0</p>
+                <div class="buy-btns">
+                  <button class="delete-btn">Delete</button>
+                  <button id="0">Buy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ENDS HERE -->
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div class="notification hide">
+      <h1>Connecting please wait...</h1>
+    </div>
+
+    <script src="https://unpkg.com/ethereum-blockies@0.1.1/blockies.min.js"></script>
+    <script src="../src/main.js"></script>
+  </body>
+</html>
