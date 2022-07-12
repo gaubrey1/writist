@@ -1,8 +1,6 @@
 # Writist
 
-# Demo
-```
-```
+# Demo: https://gaubrey1.github.io/writist/
 
 # Description
 ```
