@@ -1,3 +1,19 @@
+# Writist
+
+# Demo
+```
+```
+
+# Description
+```
+Writist is a DApp built on the celo blockchain with vanilla JavaScript and plan css. It offers users the opportunity to
+1.  Connect their celo wallet and see how much cUSD they have
+2.  Allows users to upload their article
+3.  Allows users to buy uploaded articles
+4.  Allows owners of an article to delete the article
+5.  Owner of an article can not buy their article
+```
+
 # Install
 
 ```
