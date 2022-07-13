@@ -36,8 +36,8 @@ contract Articlereview {
     }
 
 // Creating an onlyowner modifier
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner of this article can perform this function");
+    modifier onlyOwner(uint _index) {
+        require(msg.sender == owner || msg.sender == articles[_index].owner, "Only the owner of this article can perform this function");
         _;
     }
 
@@ -95,8 +95,13 @@ contract Articlereview {
         articles[_index].reviews++;
     }
 
+    function changePrice(uint _index, uint _price) public{
+        require(msg.sender == articles[_index].owner, "Only the owner can change the price");
+        articles[_index].price = _price;
+    }
+
 // Assign true to the delete property
-    function deleteArticle(uint _index) public onlyOwner {
+    function deleteArticle(uint _index) public onlyOwner(_index) {
         articles[_index].isDeleted = true;
     }
 
