@@ -5,7 +5,7 @@ import erc20Abi from "../contract/erc20.abi.json";
 import writistAbi from "../contract/writist.abi.json";
 
 const ERC20_DECIMALS = 18;
-const writistContractAddress = "0x6D91F585d4f0e37ADFdB8D497E5732eED8040334";
+const writistContractAddress = "0xdbc3eb6ee0ce4b381eD0b30dDD7cBF7320e20d8a";
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 
 let kit;
